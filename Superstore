@@ -24,3 +24,20 @@ VALUES
     (13, 'Slow Cooker', 'Appliances', 49.95, 30, 4.7),
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
+
+#For this project, I used SQL to query the Superstore database to get information about items sold at the store and their prices.
+
+select *    --Order table by prices--
+from superstore
+order by price;
+{pulled on columns and ordered by price low to high}
+
+select sum(price)    --Sum of all prices within the category "kitchen Supplies--
+from superstore
+where category = "Kitchen Supplies";
+{sum of all prices of items listed in "Kitchen Supplies" = 234.43}
+
+select max(average_rating), category    --Filtered the which category had the max average rating--
+from superstore
+group by category;
+{took all average ratings and pulled the highest rated category(answer Kitchen Supplies 4,9)
